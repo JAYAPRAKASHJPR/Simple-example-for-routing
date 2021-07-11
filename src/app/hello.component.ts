@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'hello',
   template: `
     <h1>Hello {{ name }}!</h1>
+    <router-outlet> </router-outlet>
   `,
   styles: [
     `
@@ -48,5 +49,22 @@ export class HiComponent {
   ]
 })
 export class TestComponent {
+  @Input() name: string;
+}
+
+@Component({
+  selector: 'Page',
+  template: `
+    <h1>402 : Page Not Found!!! {{ name }}!</h1>
+  `,
+  styles: [
+    `
+      h1 {
+        font-family: Lato;
+      }
+    `
+  ]
+})
+export class ErrorComponent {
   @Input() name: string;
 }
